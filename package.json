@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mstkk1110/collaboflow-js-dts/issues"
   },
-  "homepage": "https://github.com/mstkk1110/collaboflow-js-dts#readme"
+  "homepage": "https://github.com/mstkk1110/collaboflow-js-dts#readme",
+  "devDependencies": {
+    "prettier": "^2.8.0"
+  }
 }
