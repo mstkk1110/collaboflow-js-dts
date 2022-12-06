@@ -1,0 +1,20 @@
+{
+  "name": "collaboflow-js-dts",
+  "version": "1.0.0",
+  "description": "type definitions for [CollaboFlow JavaScript API](https://collaboflow.zendesk.com/hc/ja/sections/360000040276).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mstkk1110@github.com/mstkk1110/collaboflow-js-dts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mstkk1110/collaboflow-js-dts/issues"
+  },
+  "homepage": "https://github.com/mstkk1110/collaboflow-js-dts#readme"
+}
