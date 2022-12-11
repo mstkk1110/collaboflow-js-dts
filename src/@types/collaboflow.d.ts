@@ -464,4 +464,49 @@ declare namespace CollaboflowStatic {
      */
     extra5: string;
   }
+
+  interface collaboflow {
+    /**
+     * Collaboflow REST API へリクエストを行います。
+     * @see [コラボフロー REST APIを実行する](https://collaboflow.zendesk.com/hc/ja/articles/360000262896)
+     * @type {Api}
+     * @memberof IStatic
+     */
+    api: Api;
+
+    /**
+     * CollaboflowのEventEmitterです。
+     *
+     * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
+     * @type {Events}
+     * @memberof IStatic
+     */
+    events: Events;
+
+    /**
+     * 外部サイトのAPIへリクエストを行います。
+     *
+     * @see [外部のAPIを実行する](https://collaboflow.zendesk.com/hc/ja/articles/360000262876)
+     * @type {IWebProxy}
+     * @memberof IStatic
+     */
+    proxy: ProxyApi;
+
+    /**
+     * 非同期処理を制御します。
+     *
+     * @type {Promise}
+     * @memberof IStatic
+     */
+    Promise: Promise<any>;
+
+    /**
+     * ログインユーザー情報を取得します。
+     *
+     * @see [用意されている関数](https://collaboflow.zendesk.com/hc/ja/articles/360000266915)
+     * @type {Function}
+     * @memberof IStatic
+     */
+    getLoginUser(): LoginUser;
+  }
 }
