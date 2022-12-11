@@ -405,4 +405,63 @@ declare namespace CollaboflowStatic {
      */
     has(eventName: EventKey | string): boolean;
   }
+
+  interface LoginUser {
+    /**
+     * ユーザーID
+     */
+    userid: string;
+    /**
+     * 氏名
+     */
+    name: string;
+    /**
+     * 氏名（ふりがな）
+     */
+    name_reading: string;
+    /**
+     * 社員コード
+     */
+    employee_code: string;
+    /**
+     * 電話番号
+     */
+    phone: string;
+    /**
+     * 携帯電話番号
+     */
+    phone_mobile: string;
+    /**
+     * FAX
+     */
+    fax: string;
+    /**
+     * メールアドレス（PC）
+     */
+    email: string;
+    /**
+     * メールアドレス（携帯）
+     */
+    email_mobile: string;
+    /**
+     * 拡張項目1
+     */
+    extra1: string;
+    /**
+     * 拡張項目2
+     */
+    extra2: string;
+    /**
+     * 拡張項目3
+     */
+    extra3: string;
+    /**
+     * 拡張項目4
+     */
+    extra4: string;
+    /**
+     * 拡張項目5
+     */
+    extra5: string;
+  }
 }
