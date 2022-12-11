@@ -131,4 +131,86 @@ declare namespace CollaboflowStatic {
    * @typedef {string} ProxyParseType
    */
   type ProxyParseType = '' | 'text' | 'json' | 'base64';
+
+  interface ProxyApi {
+    /**
+     * 外部サイトのAPIへgetリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    get(url: string, headers: TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
+
+    /**
+     * 外部サイトのAPIへheadリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    head(url: string, headers: TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
+
+    /**
+     * 外部サイトのAPIへpostリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {(string | TkeyValue)} body 送信するボディ
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    post(url: string, headers: TkeyValue, body: string | TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
+
+    /**
+     * 外部サイトのAPIへputリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {(string | TkeyValue)} body 送信するボディ
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    put(url: string, headers: TkeyValue, body: string | TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
+
+    /**
+     * 外部サイトのAPIへpatchリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {(string | TkeyValue)} body 送信するボディ
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    patch(
+      url: string,
+      headers: TkeyValue,
+      body: string | TkeyValue,
+      parseType?: ProxyParseType
+    ): Promise<ProxyResponse>;
+
+    /**
+     * 外部サイトのAPIへdeleteリクエストを実行します。
+     *
+     * @param {string} url リクエストURL
+     * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
+     * @param {(string | TkeyValue)} body 送信するボディ
+     * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
+     * @returns {Promise<ProxyResponse>}
+     * @memberof IWebProxy
+     */
+    delete(
+      url: string,
+      headers: TkeyValue,
+      body: string | TkeyValue,
+      parseType?: ProxyParseType
+    ): Promise<ProxyResponse>;
+  }
 }
