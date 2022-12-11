@@ -510,3 +510,5 @@ declare namespace CollaboflowStatic {
     getLoginUser(): LoginUser;
   }
 }
+
+declare var collaboflow: CollaboflowStatic.collaboflow;
