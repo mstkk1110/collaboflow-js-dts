@@ -213,4 +213,20 @@ declare namespace CollaboflowStatic {
       parseType?: ProxyParseType
     ): Promise<ProxyResponse>;
   }
+
+  type PartsType =
+    | 'calculate'
+    | 'checkbox'
+    | 'date'
+    | 'label'
+    | 'list'
+    | 'lookup'
+    | 'money'
+    | 'number'
+    | 'radio'
+    | 'table'
+    | 'textarea'
+    | 'text'
+    | 'time'
+    | 'image';
 }
