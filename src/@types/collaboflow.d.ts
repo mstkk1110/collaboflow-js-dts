@@ -229,4 +229,41 @@ declare namespace CollaboflowStatic {
     | 'text'
     | 'time'
     | 'image';
+
+  type RowValue = { [key: string]: PartsValue };
+
+  interface PartsValue {
+    /**
+     * パーツの種別を取得します。
+     *
+     * @type {PartsType}
+     * @memberof IPartsValue
+     */
+    readonly type: PartsType;
+
+    /**
+     * パーツの有効状態を取得します。
+     *
+     * @type {boolean}
+     * @memberof IPartsValue
+     */
+    readonly enabled: boolean;
+
+    /**
+     * パーツの表示状態を取得、または設定します。
+     *
+     * @type {boolean}
+     * @memberof IPartsValue
+     */
+    display: boolean;
+
+    /**
+     * パーツの値を取得、または設定します。
+     * テーブルの場合、行毎のパーツ情報配列が取得されます。
+     *
+     * @type {(any | RowValue[])}
+     * @memberof IPartsValue
+     */
+    value: any | RowValue[];
+  }
 }
