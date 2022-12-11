@@ -125,4 +125,10 @@ declare namespace CollaboflowStatic {
      */
     readonly body: string | TkeyValue;
   }
+
+  /**
+   * Collaboflow Proxy API 応答内容の変換種別
+   * @typedef {string} ProxyParseType
+   */
+  type ProxyParseType = '' | 'text' | 'json' | 'base64';
 }
