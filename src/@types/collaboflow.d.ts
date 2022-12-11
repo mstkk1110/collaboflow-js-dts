@@ -270,4 +270,73 @@ declare namespace CollaboflowStatic {
   interface PartsData {
     [key: string]: PartsValue;
   }
+
+  interface EventData {
+    /**
+     * アプリケーションコードを取得します。
+     *
+     * @type {number}
+     * @memberof IEventData
+     */
+    readonly app_cd: number;
+
+    /**
+     * 経路IDを取得します。
+     *
+     * @type {number}
+     * @memberof IEventData
+     */
+    readonly processes_id: number;
+
+    /**
+     * 文書IDを取得します。
+     *
+     * @type {number}
+     * @memberof IEventData
+     */
+    readonly document_id: number;
+
+    /**
+     * 発生したイベント名を取得します。
+     *
+     * @type {string}
+     * @memberof IEventData
+     */
+    readonly event_name: string;
+
+    /**
+     * パーツオブジェクトを取得します。
+     *
+     * @type {PartsData}
+     * @memberof IEventData
+     */
+    readonly parts: PartsData;
+
+    /**
+     * パーツIDを取得します。
+     * 変更イベント発生時のみ取得できます。
+     *
+     * @type {string}
+     * @memberof IEventData
+     */
+    readonly parts_id?: string;
+
+    /**
+     * テーブルパーツのIDを取得します。
+     * テーブルパーツのイベント発生時のみ取得できます。
+     *
+     * @type {number}
+     * @memberof IEventData
+     */
+    readonly table_id?: number;
+
+    /**
+     * 行IDを取得します。
+     * テーブルパーツのイベント発生時のみ取得できます。
+     *
+     * @type {number}
+     * @memberof IEventData
+     */
+    readonly row_index?: number;
+  }
 }
