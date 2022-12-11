@@ -266,4 +266,8 @@ declare namespace CollaboflowStatic {
      */
     value: any | RowValue[];
   }
+
+  interface PartsData {
+    [key: string]: PartsValue;
+  }
 }
