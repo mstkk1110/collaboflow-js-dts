@@ -7,7 +7,7 @@
     const rows = e.parts['tbl_1'].value;
 
     for (let rowIndex = 0, rowLength = rows.length; rowIndex < rowLength; rowIndex++) {
-      const row = row[rowIndex];
+      const row = rows[rowIndex];
       row['fidRowNo'].value = rowIndex + 1;
     }
   });
