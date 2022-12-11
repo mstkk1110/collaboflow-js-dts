@@ -364,4 +364,45 @@ declare namespace CollaboflowStatic {
     | 'request.judgement.reject'
     | 'request.judgement.remand'
     | 'request.judgement.confirm';
+
+  interface Events {
+    /**
+     * 指定されたイベント名とコールバック関数を関連付けを行います。
+     *
+     * @param {(EventKey | EventKey[] | string | string[])} eventNames イベント名
+     * @param {EventCallback} callback コールバック関数
+     * @example
+     * collaboflow.event.on('request.input.show', (eventData: collaboflow.EventData) => {
+     *   console.dir(eventData);
+     * })
+     * @example
+     * const eventNames: collaboflow.EventKey[] = ['request.input.show', 'request.confirm.show'];
+     * collaboflow.event.on(eventNames, (eventData: collaboflow.EventData) => {
+     *   console.dir(eventData);
+     * })
+     * @memberof IEvents
+     * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
+     */
+    on(eventNames: EventKey | EventKey[] | string | string[], callback: EventCallback): void;
+
+    /**
+     * 指定されたイベント名とコールバック関数を関連付けを行います。
+     *
+     * @param {(EventKey | EventKey[] | string | string[])} eventNames イベント名
+     * @param {EventCallback} callback コールバック関数
+     * @memberof IEvents
+     * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
+     */
+    off(eventNames: EventKey | EventKey[] | string | string[], callback: Function): void;
+
+    /**
+     * 指定されたイベントが登録されているかを返します。
+     *
+     * @param {(EventKey | string)} eventName イベント名
+     * @returns {boolean}
+     * @memberof IEvents
+     * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
+     */
+    has(eventName: EventKey | string): boolean;
+  }
 }
