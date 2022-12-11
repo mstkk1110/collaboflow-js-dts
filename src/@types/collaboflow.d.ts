@@ -80,4 +80,49 @@ declare namespace CollaboflowStatic {
      */
     delete(path: string, parameters: TkeyValue): Promise<ApiResponse>;
   }
+
+  interface ProxyResponse {
+    /**
+     * Collaboflow Proxy APIの応答結果を取得します。
+     * statusが200～299または304の場合はtrue
+     * @type {boolean}
+     * @memberof iProxyResponse
+     */
+    readonly success: boolean;
+
+    /**
+     * Collaboflow Proxy APIの応答HTTPステータスコードを取得します。
+     * @type {number}
+     * @memberof iProxyResponse
+     */
+    readonly status: number;
+
+    /**
+     * Collaboflow Proxy APIの応答HTTPステータステキストを取得します。
+     * @type {number}
+     * @memberof iProxyResponse
+     */
+    readonly status_text: string;
+
+    /**
+     * Collaboflow Proxy APIの応答ヘッダーを取得します。
+     * @type {number}
+     * @memberof iProxyResponse
+     */
+    readonly headers: TkeyValue;
+
+    /**
+     * Collaboflow Proxy APIの応答を取形式を取得します。
+     * @type {('string' | 'object' | 'base64')}
+     * @memberof iProxyResponse
+     */
+    readonly body_type: 'string' | 'object' | 'base64';
+
+    /**
+     * Collaboflow Proxy APIの応答内容を取得します。
+     * @type {number}
+     * @memberof iProxyResponse
+     */
+    readonly body: string | TkeyValue;
+  }
 }
