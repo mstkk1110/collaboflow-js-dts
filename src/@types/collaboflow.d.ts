@@ -5,7 +5,7 @@ declare namespace CollaboflowStatic {
     /**
      * Collaboflow REST APIの応答HTTPステータスコードを取得します。
      * @type {number}
-     * @memberof iApiResponse
+     * @memberof ApiResponse
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      */
     readonly status: number;
@@ -13,7 +13,7 @@ declare namespace CollaboflowStatic {
     /**
      * Collaboflow REST APIの応答HTTPステータステキストを取得します。
      * @type {number}
-     * @memberof iApiResponse
+     * @memberof ApiResponse
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      */
     readonly status_text: string;
@@ -21,7 +21,7 @@ declare namespace CollaboflowStatic {
     /**
      * Collaboflow REST APIの応答ヘッダーを取得します。
      * @type {number}
-     * @memberof iApiResponse
+     * @memberof ApiResponse
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      */
     readonly headers: TkeyValue;
@@ -29,7 +29,7 @@ declare namespace CollaboflowStatic {
     /**
      * Collaboflow REST APIの応答内容を取得します。
      * @type {number}
-     * @memberof iApiResponse
+     * @memberof ApiResponse
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      */
     readonly body: TkeyValue;
@@ -43,7 +43,7 @@ declare namespace CollaboflowStatic {
      * @returns {Promise<ApiResponse>} Promise
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      * @example collaboflow.api.get('/v1/documents/1', {'app_cd': 1})
-     * @memberof IApi
+     * @memberof Api
      */
     get(path: string, parameters: TkeyValue): Promise<ApiResponse>;
 
@@ -54,7 +54,7 @@ declare namespace CollaboflowStatic {
      * @returns {Promise<ApiResponse>} Promise
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      * @example collaboflow.api.post('collaboflow rest api path', {'key': value})
-     * @memberof IApi
+     * @memberof Api
      */
     post(path: string, parameters: TkeyValue | FormData): Promise<ApiResponse>;
 
@@ -65,7 +65,7 @@ declare namespace CollaboflowStatic {
      * @returns {Promise<ApiResponse>} Promise
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      * @example collaboflow.api.put('collaboflow rest api path', {'key': value})
-     * @memberof IApi
+     * @memberof Api
      */
     put(path: string, parameters: TkeyValue): Promise<ApiResponse>;
 
@@ -76,7 +76,7 @@ declare namespace CollaboflowStatic {
      * @returns {Promise<ApiResponse>} Promise
      * @see [collaboflow REST API](http://docs.collaboflow.com/api-docs/)
      * @example collaboflow.api.delete('collaboflow rest api path', {'key': value})
-     * @memberof IApi
+     * @memberof Api
      */
     delete(path: string, parameters: TkeyValue): Promise<ApiResponse>;
   }
@@ -86,42 +86,42 @@ declare namespace CollaboflowStatic {
      * Collaboflow Proxy APIの応答結果を取得します。
      * statusが200～299または304の場合はtrue
      * @type {boolean}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly success: boolean;
 
     /**
      * Collaboflow Proxy APIの応答HTTPステータスコードを取得します。
      * @type {number}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly status: number;
 
     /**
      * Collaboflow Proxy APIの応答HTTPステータステキストを取得します。
      * @type {number}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly status_text: string;
 
     /**
      * Collaboflow Proxy APIの応答ヘッダーを取得します。
      * @type {number}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly headers: TkeyValue;
 
     /**
      * Collaboflow Proxy APIの応答を取形式を取得します。
      * @type {('string' | 'object' | 'base64')}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly body_type: 'string' | 'object' | 'base64';
 
     /**
      * Collaboflow Proxy APIの応答内容を取得します。
      * @type {number}
-     * @memberof iProxyResponse
+     * @memberof ProxyResponse
      */
     readonly body: string | TkeyValue;
   }
@@ -140,7 +140,7 @@ declare namespace CollaboflowStatic {
      * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     get(url: string, headers: TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
 
@@ -151,7 +151,7 @@ declare namespace CollaboflowStatic {
      * @param {TkeyValue} headers リクエスト先に送信するHTTPヘッダー
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     head(url: string, headers: TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
 
@@ -163,7 +163,7 @@ declare namespace CollaboflowStatic {
      * @param {(string | TkeyValue)} body 送信するボディ
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     post(url: string, headers: TkeyValue, body: string | TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
 
@@ -175,7 +175,7 @@ declare namespace CollaboflowStatic {
      * @param {(string | TkeyValue)} body 送信するボディ
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     put(url: string, headers: TkeyValue, body: string | TkeyValue, parseType?: ProxyParseType): Promise<ProxyResponse>;
 
@@ -187,7 +187,7 @@ declare namespace CollaboflowStatic {
      * @param {(string | TkeyValue)} body 送信するボディ
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     patch(
       url: string,
@@ -204,7 +204,7 @@ declare namespace CollaboflowStatic {
      * @param {(string | TkeyValue)} body 送信するボディ
      * @param {ProxyParseType} [parseType] 受信したボディ部の変換方法
      * @returns {Promise<ProxyResponse>}
-     * @memberof IWebProxy
+     * @memberof ProxyApi
      */
     delete(
       url: string,
@@ -237,7 +237,7 @@ declare namespace CollaboflowStatic {
      * パーツの種別を取得します。
      *
      * @type {PartsType}
-     * @memberof IPartsValue
+     * @memberof PartsValue
      */
     readonly type: PartsType;
 
@@ -245,7 +245,7 @@ declare namespace CollaboflowStatic {
      * パーツの有効状態を取得します。
      *
      * @type {boolean}
-     * @memberof IPartsValue
+     * @memberof PartsValue
      */
     readonly enabled: boolean;
 
@@ -253,7 +253,7 @@ declare namespace CollaboflowStatic {
      * パーツの表示状態を取得、または設定します。
      *
      * @type {boolean}
-     * @memberof IPartsValue
+     * @memberof PartsValue
      */
     display: boolean;
 
@@ -262,7 +262,7 @@ declare namespace CollaboflowStatic {
      * テーブルの場合、行毎のパーツ情報配列が取得されます。
      *
      * @type {(any | RowValue[])}
-     * @memberof IPartsValue
+     * @memberof PartsValue
      */
     value: any | RowValue[];
   }
@@ -276,7 +276,7 @@ declare namespace CollaboflowStatic {
      * アプリケーションコードを取得します。
      *
      * @type {number}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly app_cd: number;
 
@@ -284,7 +284,7 @@ declare namespace CollaboflowStatic {
      * 経路IDを取得します。
      *
      * @type {number}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly processes_id: number;
 
@@ -292,7 +292,7 @@ declare namespace CollaboflowStatic {
      * 文書IDを取得します。
      *
      * @type {number}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly document_id: number;
 
@@ -300,7 +300,7 @@ declare namespace CollaboflowStatic {
      * 発生したイベント名を取得します。
      *
      * @type {string}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly event_name: string;
 
@@ -308,7 +308,7 @@ declare namespace CollaboflowStatic {
      * パーツオブジェクトを取得します。
      *
      * @type {PartsData}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly parts: PartsData;
 
@@ -317,7 +317,7 @@ declare namespace CollaboflowStatic {
      * 変更イベント発生時のみ取得できます。
      *
      * @type {string}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly parts_id?: string;
 
@@ -326,7 +326,7 @@ declare namespace CollaboflowStatic {
      * テーブルパーツのイベント発生時のみ取得できます。
      *
      * @type {number}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly table_id?: number;
 
@@ -335,7 +335,7 @@ declare namespace CollaboflowStatic {
      * テーブルパーツのイベント発生時のみ取得できます。
      *
      * @type {number}
-     * @memberof IEventData
+     * @memberof EventData
      */
     readonly row_index?: number;
   }
@@ -380,7 +380,7 @@ declare namespace CollaboflowStatic {
      * collaboflow.event.on(eventNames, (eventData: collaboflow.EventData) => {
      *   console.dir(eventData);
      * })
-     * @memberof IEvents
+     * @memberof Events
      * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
      */
     on(eventNames: EventKey | EventKey[] | string | string[], callback: EventCallback): void;
@@ -390,7 +390,7 @@ declare namespace CollaboflowStatic {
      *
      * @param {(EventKey | EventKey[] | string | string[])} eventNames イベント名
      * @param {EventCallback} callback コールバック関数
-     * @memberof IEvents
+     * @memberof Events
      * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
      */
     off(eventNames: EventKey | EventKey[] | string | string[], callback: Function): void;
@@ -400,7 +400,7 @@ declare namespace CollaboflowStatic {
      *
      * @param {(EventKey | string)} eventName イベント名
      * @returns {boolean}
-     * @memberof IEvents
+     * @memberof Events
      * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
      */
     has(eventName: EventKey | string): boolean;
@@ -470,7 +470,7 @@ declare namespace CollaboflowStatic {
      * Collaboflow REST API へリクエストを行います。
      * @see [コラボフロー REST APIを実行する](https://collaboflow.zendesk.com/hc/ja/articles/360000262896)
      * @type {Api}
-     * @memberof IStatic
+     * @memberof collaboflow
      */
     api: Api;
 
@@ -479,7 +479,7 @@ declare namespace CollaboflowStatic {
      *
      * @see [イベントの記述方法](https://collaboflow.zendesk.com/hc/ja/articles/360000262936)
      * @type {Events}
-     * @memberof IStatic
+     * @memberof collaboflow
      */
     events: Events;
 
@@ -487,8 +487,8 @@ declare namespace CollaboflowStatic {
      * 外部サイトのAPIへリクエストを行います。
      *
      * @see [外部のAPIを実行する](https://collaboflow.zendesk.com/hc/ja/articles/360000262876)
-     * @type {IWebProxy}
-     * @memberof IStatic
+     * @type {ProxyApi}
+     * @memberof collaboflow
      */
     proxy: ProxyApi;
 
@@ -496,7 +496,7 @@ declare namespace CollaboflowStatic {
      * 非同期処理を制御します。
      *
      * @type {Promise}
-     * @memberof IStatic
+     * @memberof collaboflow
      */
     Promise: Promise<any>;
 
@@ -505,7 +505,7 @@ declare namespace CollaboflowStatic {
      *
      * @see [用意されている関数](https://collaboflow.zendesk.com/hc/ja/articles/360000266915)
      * @type {Function}
-     * @memberof IStatic
+     * @memberof collaboflow
      */
     getLoginUser(): LoginUser;
   }
