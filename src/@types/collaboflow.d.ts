@@ -347,4 +347,21 @@ declare namespace CollaboflowStatic {
    * @param {EventData} eventData イベントデータ
    */
   type EventCallback = (eventData: EventData) => void | boolean | Promise<any>;
+
+  type EventKey =
+    | 'request.input.show'
+    | 'request.input.check'
+    | 'request.confirm.show'
+    | 'request.confirm.apply'
+    | 'request.detail.show'
+    | 'request.detail.accept'
+    | 'request.detail.reject'
+    | 'request.detail.remand'
+    | 'request.detail.confirm'
+    | 'request.detail.takeback'
+    | 'request.judgement.show'
+    | 'request.judgement.accept'
+    | 'request.judgement.reject'
+    | 'request.judgement.remand'
+    | 'request.judgement.confirm';
 }
