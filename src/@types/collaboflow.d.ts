@@ -339,4 +339,12 @@ declare namespace CollaboflowStatic {
      */
     readonly row_index?: number;
   }
+
+  /**
+   * イベントのコールバックハンドラー
+   *
+   * @callback TEventCallback
+   * @param {EventData} eventData イベントデータ
+   */
+  type EventCallback = (eventData: EventData) => void | boolean | Promise<any>;
 }
